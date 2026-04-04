@@ -27,6 +27,9 @@ body {
     border-bottom: 1px solid #333;
     padding: 0;
     margin: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .tui-tabs .tab {
@@ -116,6 +119,9 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .footer-center iframe {
@@ -181,4 +187,51 @@ footer {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 650px) {
+    /* Contacts move to top of the window */
+    .footer-left {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #111;
+        justify-content: center;
+        padding: 10px 0;
+        z-index: 1001;
+        border-bottom: 1px solid #333;
+    }
+
+    /* Adjust tabs to sit below the fixed top contacts bar */
+    .tui-tabs {
+        margin-top: 40px;
+        top: 40px;
+    }
+
+    /* Footer stacks vertically on small screens to accommodate perfectly centered items */
+    footer {
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .footer-center {
+        position: relative;
+        left: auto;
+        transform: none;
+        width: 100%;
+    }
+
+    .footer-right {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* Small padding to ensure bottom content clears the taller stacked footer */
+    .container {
+        padding-bottom: 6rem;
+    }
 }
