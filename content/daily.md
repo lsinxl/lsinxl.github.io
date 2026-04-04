@@ -2,15 +2,14 @@
 title = "Daily"
 +++
 
-### 4 April 2026
-ok. at this moment Mo_ is trying to record a video.  
-LITERALLY AT 00:19 AM.  
-I NEED A WAY TO STOP HIM.  
-there is a camera on my face. 
+### 4 April 2026 - 1:50 PM  
+I'm a little uncomfortable with committing small changes...  
+maybe i should think about domain name and servers.  
+anyway at this moment I want to share a photo from last night.   
+![lastnight](/images/lastnight.jpg)
 
-### 4 April 2026    
-finally he stops recording...   
-i am happy rn LOL
+
+
 
 ### 4 April 2026 - 3:37 AM
 after 2182719 commits we can finally run the github webpage :)  
