@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.131.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=37053&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasansvr</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="tui-tabs" id="headers">
+        <a href="#" class="tab active" data-target="daily">NOW</a>
+        <a href="#" class="tab" data-target="projects">PROJECTS</a>
+        <a href="#" class="tab" data-target="identity">WHOAMI</a>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <div id="daily" class="tab-content active">
+                <h3 id="4-april-2026">4 April 2026</h3>
+<p>ok. at this moment Mo_ is trying to record a video.<br>
+LITERALLY AT 00:19 AM.<br>
+I NEED A WAY TO STOP HIM.<br>
+there is a camera on my face.</p>
+<h3 id="4-april-2026-1">4 April 2026</h3>
+<p>finally he stops recording&hellip;<br>
+i am happy rn LOL</p>
+
+            </div>
+            
+            <div id="projects" class="tab-content">
+                <div class="modular-grid">
+  
+
+<a href="https://github.com/Yasansvr/artsii" target="_blank" class="github-preview-card">
+    <img src="https://opengraph.githubassets.com/1/Yasansvr/artsii" alt="GitHub Repo Yasansvr/artsii">
+</a>
+ 
+<a href="https://github.com/Yasansvr/tuio" target="_blank" class="github-preview-card">
+    <img src="https://opengraph.githubassets.com/1/Yasansvr/tuio" alt="GitHub Repo Yasansvr/tuio">
+</a>
+ 
+<a href="https://github.com/Yasansvr/drop-it" target="_blank" class="github-preview-card">
+    <img src="https://opengraph.githubassets.com/1/Yasansvr/drop-it" alt="GitHub Repo Yasansvr/drop-it">
+</a>
+ 
+<a href="https://github.com/Yasansvr/spaceshot" target="_blank" class="github-preview-card">
+    <img src="https://opengraph.githubassets.com/1/Yasansvr/spaceshot" alt="GitHub Repo Yasansvr/spaceshot">
+</a>
+ 
+<a href="https://github.com/Yasansvr/ForceToDo" target="_blank" class="github-preview-card">
+    <img src="https://opengraph.githubassets.com/1/Yasansvr/ForceToDo" alt="GitHub Repo Yasansvr/ForceToDo">
+</a>
+ 
+
+
+</div>
+
+
+            </div>
+            
+            <div id="identity" class="tab-content">
+                <h3 id="hello-world">Hello World!</h3>
+<p>This is Yasan, I am 22 y.o computer engineering student at Politecnico di Torino.<br>
+I really like animations (more than movies!) and Open source world (Thanks to Linus Trovalds&lt;3)<br>
+I made 3D animations and characters before - because I like to create things - but these days I&rsquo;m changing my creation field. Struggling with 0 and 1s :)<br>
+and codes&hellip;<br>
+and semi-colons&hellip;<br>
+I am talking about C programming language :)<br>
+I LOVE IT.<br>
+By the way, here I am posting my thoughts , memories , beliefs and projects.</p>
+
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-left">
+                <a href="https://github.com/yasansvr" target="_blank" class="footer-btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/yasansavari/" target="_blank" class="footer-btn">LinkedIn</a>
+                <a href="mailto:yasansvr@outlook.com" class="footer-btn">Email</a>
+            </div>
+            <div class="footer-center">
+                <iframe id="global-player" width="300" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A870514744&color=%2300ddff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+            </div>
+            <div class="footer-right">
+                <span id="clock">00:00:00</span>
+                <a href="#headers" class="return-top" title="Return to top">↑</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault(); 
+
+                
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                
+                tab.classList.add('active');
+
+                
+                const targetId = tab.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        
+        
+        document.body.addEventListener('click', (e) => {
+            if (e.target.classList.contains('music-track')) {
+                e.preventDefault();
+                const globalPlayer = document.getElementById('global-player');
+                globalPlayer.src = e.target.getAttribute('data-url');
+            }
+        });
+
+        
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour12: false });
+            const clockEl = document.getElementById('clock');
+            if (clockEl) clockEl.innerText = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>

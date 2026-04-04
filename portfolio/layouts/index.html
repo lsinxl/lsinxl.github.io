@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yasansvr</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <!-- Note: CSS paths in Hugo usually need to be absolute from root, like /css/style.css -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="tui-tabs" id="headers">
+        <a href="#" class="tab active" data-target="daily">NOW</a>
+        <a href="#" class="tab" data-target="projects">PROJECTS</a>
+        <a href="#" class="tab" data-target="identity">WHOAMI</a>
+    </nav>
+    
+    <div class="container">
+        <main>
+            <div id="daily" class="tab-content active">
+                {{ with .Site.GetPage "daily" }}{{ .Content }}{{ else }}<p>Waiting for daily.md...</p>{{ end }}
+            </div>
+            
+            <div id="projects" class="tab-content">
+                {{ with .Site.GetPage "projects" }}{{ .Content }}{{ else }}<p>Waiting for projects.md...</p>{{ end }}
+            </div>
+            
+            <div id="identity" class="tab-content">
+                {{ with .Site.GetPage "identity" }}{{ .Content }}{{ else }}<p>Waiting for identity.md...</p>{{ end }}
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-left">
+                <a href="https://github.com/yasansvr" target="_blank" class="footer-btn">GitHub</a>
+                <a href="https://www.linkedin.com/in/yasansavari/" target="_blank" class="footer-btn">LinkedIn</a>
+                <a href="mailto:yasansvr@outlook.com" class="footer-btn">Email</a>
+            </div>
+            <div class="footer-center">
+                <iframe id="global-player" width="300" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A870514744&color=%2300ddff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+            </div>
+            <div class="footer-right">
+                <span id="clock">00:00:00</span>
+                <a href="#headers" class="return-top" title="Return to top">↑</a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default link text jump
+
+                // Remove active class from everywhere
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                // Find matching content and show it
+                const targetId = tab.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+
+        // Global Music Player Sync
+        // We use event delegation since '.music-track' elements are injected dynamically by Hugo
+        document.body.addEventListener('click', (e) => {
+            if (e.target.classList.contains('music-track')) {
+                e.preventDefault();
+                const globalPlayer = document.getElementById('global-player');
+                globalPlayer.src = e.target.getAttribute('data-url');
+            }
+        });
+
+        // Terminal Clock
+        function updateClock() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', { hour12: false });
+            const clockEl = document.getElementById('clock');
+            if (clockEl) clockEl.innerText = timeString;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
