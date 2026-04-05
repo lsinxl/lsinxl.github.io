@@ -242,8 +242,66 @@ main img {
         width: 100%;
     }
 
-    /* Small padding to ensure bottom content clears the taller stacked footer */
     .container {
         padding-bottom: 6rem;
     }
+}
+
+/* Reaction Buttons */
+.reaction-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+.reaction-btn {
+    background-color: transparent;
+    color: #363636;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.reaction-btn svg {
+    color: inherit;
+    transition: transform 0.2s;
+}
+
+.reaction-btn:hover {
+    background-color: #1a1a1a;
+    color: #ccc;
+    border-color: #1b1b1b;
+}
+
+.reaction-btn:hover .like-count,
+.reaction-btn:hover .dislike-count {
+    color: #ccc;
+}
+
+.reaction-btn.active.like-btn {
+    background-color: #1e1e1e;
+    color: rgb(99, 207, 115); /* terminal green */
+    border-color: rgb(99, 207, 115);
+}
+
+.reaction-btn.active.like-btn svg {
+    transform: scale(1.1);
+}
+
+.reaction-btn.active.dislike-btn {
+    background-color: #1e1e1e;
+    color: #ff6b6b; /* reddish for dislike */
+    border-color: #ff6b6b;
+}
+
+.reaction-btn.active.dislike-btn svg {
+    transform: rotate(180deg) scale(1.1);
 }

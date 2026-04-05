@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
     <!-- Note: CSS paths in Hugo usually need to be absolute from root, like /css/style.css -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css?v=2">
 </head>
 <body>
     <nav class="tui-tabs" id="headers">
@@ -40,11 +40,10 @@
                 <a href="mailto:yasansvr@outlook.com" class="footer-btn">Email</a>
             </div>
             <div class="footer-center">
-                <iframe id="global-player" width="300" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A870514744&color=%2300ddff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+                <iframe id="global-player" width="300" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/127341511&color=%2300ddff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
             </div>
             <div class="footer-right">
                 <span id="clock">00:00:00</span>
-                <a href="#headers" class="return-top" title="Return to top">↑</a>
             </div>
         </footer>
     </div>
@@ -89,6 +88,102 @@
         }
         setInterval(updateClock, 1000);
         updateClock();
+        // Reaction Buttons Logic
+        // Since it's a static site, we use localStorage to persist fake counts and states locally.
+        // For real cross-user sync, consider using Firebase or a serverless KV store.
+        const reactionContainers = document.querySelectorAll('.reaction-container');
+        
+        reactionContainers.forEach(container => {
+            const postId = container.getAttribute('data-post-id');
+            const likeBtn = container.querySelector('.like-btn');
+            const dislikeBtn = container.querySelector('.dislike-btn');
+            const likeCountSpan = container.querySelector('.like-count');
+            const dislikeCountSpan = container.querySelector('.dislike-count');
+            
+            // True cross-user synchronization starting at 0 using counterapi.dev
+            let globalLikes = 0;
+            let globalDislikes = 0;
+            const namespace = 'yasansvr';
+            
+            // Clean postId for safe API usage
+            const safePostId = postId ? postId.replace(/[^a-zA-Z0-9_-]/g, '') : 'default_post';
+            const likeKey = safePostId + '_likes';
+            const dislikeKey = safePostId + '_dislikes';
+
+            // Load saved state so users can't spam double votes
+            const savedState = localStorage.getItem(`reaction_${postId}`);
+            
+            if (savedState === 'like') {
+                likeBtn.classList.add('active');
+            } else if (savedState === 'dislike') {
+                dislikeBtn.classList.add('active');
+            }
+            
+            function updateDisplay() {
+                likeCountSpan.innerText = globalLikes;
+                dislikeCountSpan.innerText = globalDislikes;
+            }
+
+            // Fetch current global counts starting from 0
+            fetch(`https://api.counterapi.dev/v1/${namespace}/${likeKey}/`)
+                .then(res => res.json())
+                .then(data => { globalLikes = data.count || 0; updateDisplay(); })
+                .catch(() => {});
+                
+            fetch(`https://api.counterapi.dev/v1/${namespace}/${dislikeKey}/`)
+                .then(res => res.json())
+                .then(data => { globalDislikes = data.count || 0; updateDisplay(); })
+                .catch(() => {});
+            
+            updateDisplay();
+            
+            likeBtn.addEventListener('click', () => {
+                if (likeBtn.classList.contains('active')) {
+                    // Remove like
+                    likeBtn.classList.remove('active');
+                    localStorage.removeItem(`reaction_${postId}`);
+                    globalLikes = Math.max(0, globalLikes - 1);
+                    fetch(`https://api.counterapi.dev/v1/${namespace}/${likeKey}/down`);
+                } else {
+                    // Add like
+                    likeBtn.classList.add('active');
+                    globalLikes++;
+                    localStorage.setItem(`reaction_${postId}`, 'like');
+                    fetch(`https://api.counterapi.dev/v1/${namespace}/${likeKey}/up`);
+                    
+                    if (dislikeBtn.classList.contains('active')) {
+                        dislikeBtn.classList.remove('active');
+                        globalDislikes = Math.max(0, globalDislikes - 1);
+                        fetch(`https://api.counterapi.dev/v1/${namespace}/${dislikeKey}/down`);
+                    }
+                }
+                updateDisplay();
+            });
+            
+            dislikeBtn.addEventListener('click', () => {
+                if (dislikeBtn.classList.contains('active')) {
+                    // Remove dislike
+                    dislikeBtn.classList.remove('active');
+                    localStorage.removeItem(`reaction_${postId}`);
+                    globalDislikes = Math.max(0, globalDislikes - 1);
+                    fetch(`https://api.counterapi.dev/v1/${namespace}/${dislikeKey}/down`);
+                } else {
+                    // Add dislike
+                    dislikeBtn.classList.add('active');
+                    globalDislikes++;
+                    localStorage.setItem(`reaction_${postId}`, 'dislike');
+                    fetch(`https://api.counterapi.dev/v1/${namespace}/${dislikeKey}/up`);
+                    
+                    if (likeBtn.classList.contains('active')) {
+                        likeBtn.classList.remove('active');
+                        globalLikes = Math.max(0, globalLikes - 1);
+                        fetch(`https://api.counterapi.dev/v1/${namespace}/${likeKey}/down`);
+                    }
+                }
+                updateDisplay();
+            });
+        });
+
     </script>
 </body>
 </html>
