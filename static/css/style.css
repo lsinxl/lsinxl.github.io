@@ -185,8 +185,11 @@ footer {
 
 .github-preview-card img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: block;
+    margin: 0;
+    border-radius: 0;
 }
 
 /* Base image styling for markdown content */
