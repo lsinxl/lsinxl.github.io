@@ -2,6 +2,7 @@
 title = "WHOAMI"
 +++
 
+
 ### Hello World!
 This is Yasan, I am 22 y.o computer engineering student at Politecnico di Torino.   
 I really like animations (more than movies!) and Open source world (Thanks to Linus Torvalds<3)  
