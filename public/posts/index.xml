@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>19 April 2026</title>
+      <link>http://localhost:1313/posts/19-april-2026/</link>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/19-april-2026/</guid>
+      <description>سلام. تقریبا نیم ساعته دارم فکر میکنم فارسی بنویسم یا انگلیسی&#xA;تهش به این نتیجه رسیدم اگه فارسی بنویسم دکمه ترنسلیت بذارم خیلی بهتره از هر جهت.&#xA;اینجا خبر خاصی نیست حقیقتش بیشتر یه تجربه جدیده واسه اینکه بیشتر با دنیای اینترنت&#xA;آشنا بشم. اولین بار روی گیت وب آوردمش بالا ولی خب ایده جالبی نبود&#xA;دلم نمیخواست ۱۳۲ تا کامیت واسه پست کردن یه مطلب داشته باشم. هه هه هه</description>
+    </item>
+  </channel>
+</rss>
