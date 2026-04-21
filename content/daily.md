@@ -13,8 +13,17 @@ title = "Daily"
 آیا واقعا بر اساس منطق تصمیم گرفتیم یا یکسری پروتکل های نظارتی بهمون دیکته شده؟  
 بنظرم نیازی به اعتماد به بانک ها نیست. سرمایه من **سرمایه من** است:)
 
----
+
 ***21 April 2026***  
 بنظرم این بهترین ویدیو برای درک دقیق بلاکچینه.  
 https://youtu.be/_160oMzblY8?is=SBdOvSY5YsshNrqG
+
+
+***22 April 2026***  
+We must defend our own privacy if we expect to have any. We must come together and create systems which allow anonymous transactions to take place. People have been defending their own privacy for centuries with whispers, darkness, envelopes, closed doors, secret handshakes, and couriers. The technologies of the past did not allow for strong privacy, but electronic technologies do.
+
+We the Cypherpunks are dedicated to building anonymous systems. We are defending our privacy with cryptography, with anonymous mail forwarding systems, with digital signatures, and with electronic money.
+
+Cypherpunks write code. We know that someone has to write software to defend privacy, and since we can't get privacy unless we all do, we're going to write it. We publish our code so that our fellow Cypherpunks may practice and play with it. Our code is free for all to use, worldwide. We don't much care if you don't approve of the software we write. We know that software can't be destroyed and that a widely dispersed system can't be shut down.  
+https://www.activism.net/cypherpunk/manifesto.html
 
