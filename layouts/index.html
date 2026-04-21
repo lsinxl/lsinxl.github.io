@@ -5,26 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yasansvr</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
     <link rel="stylesheet" href="/css/style.css?v=3">
-    <style>
-        /* Hide the default Google Translate widget and banner */
-        #google_translate_element {
-            display: none;
-        }
-
-        .goog-te-banner-frame.skiptranslate {
-            display: none !important;
-        }
-
-        body {
-            top: 0px !important;
-        }
-
-        #goog-gt-tt {
-            display: none !important;
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -35,56 +18,13 @@
             <a href="https://github.com/yasansvr" target="_blank">GitHub</a> |
             <a href="https://www.linkedin.com/in/yasansavari/" target="_blank">LinkedIn</a> |
             <a href="mailto:yasansvr@outlook.com">Email</a>
-            <div style="margin-top: 1em;">
-                <button id="translate-btn" onclick="toggleTranslate()"
-                    style="padding: 5px 10px; cursor: pointer; background: #fff; border: 1px solid #ccc; border-radius: 4px;">Translate
-                    to English</button>
-            </div>
         </header>
 
-        <section id="daily" style="margin-bottom: 4em;">
+        <section id="daily">
             {{ with .Site.GetPage "daily" }}{{ .Content }}{{ else }}<p>No daily content.</p>{{ end }}
         </section>
 
     </main>
-
-    <!-- Google Translate API setup -->
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'fa',
-                includedLanguages: 'en',
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-    <script>
-        function toggleTranslate() {
-            var isTranslated = document.cookie.indexOf('googtrans=/fa/en') !== -1;
-            if (isTranslated) {
-                // Remove cookie to revert translation
-                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-                document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=' + window.location.hostname + '; path=/;';
-                window.location.reload();
-            } else {
-                // Set cookie to translate
-                document.cookie = 'googtrans=/fa/en; path=/';
-                document.cookie = 'googtrans=/fa/en; domain=' + window.location.hostname + '; path=/';
-                window.location.reload();
-            }
-        }
-
-        // Update button text if already translated
-        window.addEventListener('DOMContentLoaded', (event) => {
-            if (document.cookie.indexOf('googtrans=/fa/en') !== -1) {
-                document.getElementById('translate-btn').innerText = 'Show Original (Persian)';
-            }
-        });
-    </script>
 </body>
 
 </html>
