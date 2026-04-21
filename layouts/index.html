@@ -13,7 +13,7 @@
 <body>
     <main>
         <header
-            style="margin-bottom: 2em; border-bottom: 1px solid #ccc; padding-bottom: 1em; align-items: center; justify-content: center; text-align: center;">
+            style="margin-bottom: 2em; border-bottom: 1px solid #ffa600; padding-bottom: 1em; align-items: center; justify-content: center; text-align: center;">
             <h1>lsinxl</h1>
             <a href="https://github.com/yasansvr" target="_blank">GitHub</a> |
             <a href="https://www.linkedin.com/in/yasansavari/" target="_blank">LinkedIn</a> |
@@ -21,7 +21,14 @@
         </header>
 
         <section id="daily">
-            {{ with .Site.GetPage "daily" }}{{ .Content }}{{ else }}<p>No daily content.</p>{{ end }}
+            {{ with .Site.GetPage "daily" }}
+            <aside id="toc">
+                {{ .TableOfContents }}
+            </aside>
+            <div class="content">
+                {{ .Content }}
+            </div>
+            {{ else }}<p>No daily content.</p>{{ end }}
         </section>
 
     </main>
