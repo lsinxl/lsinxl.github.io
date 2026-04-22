@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPG Key Commands | lsinxl</title>
+    <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
+    <link rel="stylesheet" href="/css/style.css?v=4">
+    
+</head>
+
+<body>
+    <main>
+        <header
+            style="margin-bottom: 2em; border-bottom: 1px solid #ffa600; padding-bottom: 1em; align-items: center; justify-content: center; text-align: center;">
+            <h1>lsinxl</h1>
+            <h4 style="text-align: center;">gpg-fingerprint: E6D1203839F963787A5A0DCEA20A2824BBE013AB</h4>
+            <a href="https://github.com/yasansvr" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/yasansavari/" target="_blank">LinkedIn</a> |
+            <a href="mailto:yasansvr@outlook.com">Email</a> |
+            <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/E6D1203839F963787A5A0DCEA20A2824BBE013AB">gpg-pb file</a>
+        </header>
+
+        <section id="content">
+            <aside id="toc">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#gpg-key-commands">gpg-key commands</a></li>
+  </ul>
+</nav>
+            </aside>
+            <div class="content">
+                <h2 id="gpg-key-commands">gpg-key commands</h2>
+<p>🔑 مدیریت کلیدهای خودت (Identity)
+این بخش برای ایجاد و بررسی شناسنامه دیجیتال توست.</p>
+<p>ساخت کلید جدید (حرفه‌ای و تعاملی):</p>
+<pre tabindex="0"><code>gpg --expert --full-generate-key
+</code></pre><p>مشاهده لیست کلیدهای عمومی:</p>
+<pre tabindex="0"><code>gpg --list-keys --keyid-format SHORT
+</code></pre><p>مشاهده لیست کلیدهای خصوصی (فوق محرمانه):</p>
+<pre tabindex="0"><code>gpg --list-secret-keys --keyid-format SHORT
+</code></pre><p>مشاهده اثر انگشت (Fingerprint) کلید:</p>
+<pre tabindex="0"><code>gpg --fingerprint [Email_Or_KeyID]
+</code></pre><p>📤 خروجی گرفتن و پشتیبان‌گیری (Export)
+مهم: حتماً از کلید خصوصی خود بک‌آپ بگیرید و در جای امن (آفلاین) نگه دارید.</p>
+<p>خروجی کلید عمومی (برای اشتراک‌گذاری):</p>
+<pre tabindex="0"><code>gpg --armor --export [KeyID] &gt; public_key.asc
+</code></pre><p>خروجی کلید خصوصی (بک‌آپ حساس):</p>
+<pre tabindex="0"><code>gpg --armor --export-secret-keys [KeyID] &gt; private_key.asc
+</code></pre><p>ساخت فایل ابطال (Revocation Certificate):</p>
+<pre tabindex="0"><code>gpg --gen-revoke [KeyID] &gt; revoke.asc
+</code></pre><p>(اگر کلیدت گم یا هک شد، با این فایل به دنیا اعلام می‌کنی که دیگر معتبر نیست).</p>
+<p>📨 مدیریت کلیدهای دیگران (Import &amp; Trust)
+زمانی که می‌خواهی کلید دوستانت را اضافه کنی یا با سرورهای جهانی تعامل داشته باشی.</p>
+<p>وارد کردن کلید عمومی دیگران:</p>
+<pre tabindex="0"><code>gpg --import friend_key.asc
+</code></pre><p>جستجوی کلید یک نفر در اینترنت:</p>
+<pre tabindex="0"><code>gpg --keyserver keys.openpgp.org --search-keys [Email]
+</code></pre><p>ارسال کلید خودت به سرور جهانی:</p>
+<pre tabindex="0"><code>gpg --keyserver keys.openpgp.org --send-keys [KeyID]
+</code></pre><p>تازه کردن کلیدها (آپدیت انقضای کلیدهای دوستان):</p>
+<pre tabindex="0"><code>gpg --refresh-keys
+</code></pre><p>🔒 رمزنگاری و امضا (Files &amp; Messages)
+دستوراتی برای قفل کردن و مهر و موم کردن فایل‌ها در ترمینال.</p>
+<p>رمزنگاری یک فایل برای گیرنده خاص:</p>
+<pre tabindex="0"><code>gpg --encrypt --recipient [Friend_Email] secret.txt
+</code></pre><p>رمزگشایی (Decrypt) یک فایل یا پیام:</p>
+<pre tabindex="0"><code>gpg --decrypt secret.txt.gpg
+</code></pre><p>فقط امضا کردن متن (Clearsign):</p>
+<pre tabindex="0"><code>gpg --clearsign document.txt
+</code></pre><p>(یک فایل متنی می‌سازد که محتوا خوانا است اما امضا به انتهای آن چسبیده).</p>
+<p>تایید اصالت یک فایل امضا شده:</p>
+<pre tabindex="0"><code>gpg --verify document.txt.asc
+</code></pre><p>🗑️ پاک‌سازی (Delete)
+حذف کلید عمومی:</p>
+<pre tabindex="0"><code>gpg --delete-keys [KeyID]
+</code></pre><p>حذف کلید خصوصی:</p>
+<pre tabindex="0"><code>gpg --delete-secret-keys [KeyID]
+</code></pre><p>💡 چند ترفند کوتاه:
+رمزنگاری سریع با پسورد (بدون کلید):</p>
+<pre tabindex="0"><code>gpg --symmetric file.txt
+</code></pre><p>(این دستور از تو یک پسورد می‌خواهد و فایل را قفل می‌کند؛ برای باز کردنش هم فقط همان پسورد لازم است).</p>
+<p>خروجی مستقیم به ترمینال:
+اگر می‌خواهی کلید عمومی‌ات را سریع کپی کنی و در چت بفرستی:</p>
+<pre tabindex="0"><code>gpg --armor --export [KeyID] 
+</code></pre><p>(بدون علامت &lt; و نام فایل).</p>
+
+            </div>
+            
+            <div style="margin-top: 3em; text-align: center;">
+                <a href="/">back to home</a>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>

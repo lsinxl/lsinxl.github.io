@@ -2,17 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
+    <link>https://lsinxl.xyz/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://lsinxl.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Daily</title>
-      <link>http://localhost:1313/daily/</link>
+      <link>https://lsinxl.xyz/daily/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/daily/</guid>
+      <guid>https://lsinxl.xyz/daily/</guid>
       <description>19/4/2026 - intro سلام. تا جایی که یادمه همیشه دوست داشتم یه مکان برای نوشتن فکرا و دیدگاهام داشته باشم. حقیقتا تلگرام گزینه مناسبی بود ولی خب نوشتن وبلاگ رو یه دامین شخصی یه حس دیگه ای داشت هه هه هه.&#xA;بهرحال اینجا چیزای روزمره رو نمینویسم. بیشتر نظراتم یا شاید حتی اخبار جدید درمورد تکنولوژی و اپن سورس و بیت کوین و این چیزارو بنویسم. و اینکه اگه واستون سواله چرا اینجا انقدر سادست چون دلم میخواست فضای نوستالژی اینترنت حفظ بشه.</description>
+    </item>
+    <item>
+      <title>GPG Key Commands</title>
+      <link>https://lsinxl.xyz/gpg-keys/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://lsinxl.xyz/gpg-keys/</guid>
+      <description>gpg-key commands 🔑 مدیریت کلیدهای خودت (Identity) این بخش برای ایجاد و بررسی شناسنامه دیجیتال توست.&#xA;ساخت کلید جدید (حرفه‌ای و تعاملی):&#xA;gpg --expert --full-generate-key مشاهده لیست کلیدهای عمومی:&#xA;gpg --list-keys --keyid-format SHORT مشاهده لیست کلیدهای خصوصی (فوق محرمانه):&#xA;gpg --list-secret-keys --keyid-format SHORT مشاهده اثر انگشت (Fingerprint) کلید:&#xA;gpg --fingerprint [Email_Or_KeyID] 📤 خروجی گرفتن و پشتیبان‌گیری (Export) مهم: حتماً از کلید خصوصی خود بک‌آپ بگیرید و در جای امن (آفلاین) نگه دارید.</description>
     </item>
   </channel>
 </rss>

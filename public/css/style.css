@@ -67,6 +67,11 @@ main img {
     margin-top: 0;
 }
 
+header h4 {
+    text-align: center;
+    color: #ffa600;
+}
+
 @media (max-width: 600px) {
     #daily {
         flex-direction: column;

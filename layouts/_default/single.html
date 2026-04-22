@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yasansvr</title>
+    <title>{{ .Title }} | lsinxl</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
     <link rel="stylesheet" href="/css/style.css?v=4">
     
@@ -22,15 +22,17 @@
             <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/E6D1203839F963787A5A0DCEA20A2824BBE013AB">gpg-pb file</a>
         </header>
 
-        <section id="daily">
-            {{ with .Site.GetPage "daily" }}
+        <section id="content">
             <aside id="toc">
                 {{ .TableOfContents }}
             </aside>
             <div class="content">
                 {{ .Content }}
             </div>
-            {{ else }}<p>No daily content.</p>{{ end }}
+            
+            <div style="margin-top: 3em; text-align: center;">
+                <a href="/">back to home</a>
+            </div>
         </section>
 
     </main>
