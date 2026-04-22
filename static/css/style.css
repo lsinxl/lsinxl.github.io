@@ -1,4 +1,10 @@
 /* No advanced CSS, as requested. Keeping it clean and simple. */
+html {
+    font-size: clamp(16px, 1.5vw + 14px, 20px);
+    -webkit-text-size-adjust: 100%; /* Prevents iOS from automatically resizing text */
+    text-size-adjust: 100%;
+}
+
 body {
     background-color: rgb(21, 21, 21);
     font-family: Garamond;
@@ -7,6 +13,7 @@ body {
     margin: 0 auto;
     max-width: 800px;
     padding: 0 1rem;
+    overflow-wrap: break-word; /* Prevents long text from breaking layout */
 }
 main img {
     max-width: 100%;
