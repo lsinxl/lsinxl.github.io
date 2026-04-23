@@ -1,4 +1,4 @@
-/* No advanced CSS, as requested. Keeping it clean and simple. */
+
 body {
     background-color: rgb(21, 21, 21);
     font-family: Garamond;
@@ -7,7 +7,9 @@ body {
     margin: 0 auto;
     max-width: 800px;
     padding: 0 1rem;
+    
 }
+
 main img {
     max-width: 100%;
 }
@@ -76,6 +78,7 @@ header h4 {
     #daily {
         flex-direction: column;
     }
+
     #toc {
         width: 100%;
         position: relative;

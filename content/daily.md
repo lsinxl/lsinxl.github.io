@@ -38,8 +38,6 @@ https://www.activism.net/cypherpunk/manifesto.html
 این زیر هم کانفیگ نئومات و قرار میدم  
 هم کامندای مورد نیاز gpg 
 ## neomutt config
-```
-#-----NEOMUTT CONFIG----------
 
 set realname = "YOUR NAME"
 set from = "YOUR E-MAIL"  
@@ -64,7 +62,7 @@ set pgp_sign_as = "PUBLIK KEY 'ID' "
 set mail_check = 60
 set timeout = 10
 set sort = reverse-threads
-```
+
 ## gpg-key commands
 [🔗 gpg-key commands](/gpg-keys/)
 
