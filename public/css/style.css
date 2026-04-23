@@ -65,6 +65,10 @@ main img {
     color: #ffa600;
 }
 
+a {
+    color: #e6ff77;
+}
+
 .content h2:first-child {
     margin-top: 0;
 }
