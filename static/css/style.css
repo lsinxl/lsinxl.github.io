@@ -34,6 +34,8 @@ main img {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 #toc li {
@@ -66,7 +68,7 @@ main img {
 }
 
 a {
-    color: #e6ff77;
+    color: #00ffb3;
 }
 
 .content h2:first-child {
