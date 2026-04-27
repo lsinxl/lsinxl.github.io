@@ -1,8 +1,8 @@
 
 body {
-    background-color: rgb(21, 21, 21);
+    background-color: #ffecd6;
     font-family: Garamond;
-    color: rgb(255, 255, 255);
+    color: #0d2b45;
     line-height: 1.6;
     margin: 0 auto;
     max-width: 800px;
@@ -43,13 +43,13 @@ main img {
 }
 
 #toc a {
-    color: #ffffff;
+    color: #0d2b45;
     text-decoration: none;
     transition: color 0.2s;
 }
 
 #toc a:hover {
-    color: #ffa600;
+    color: #544e68;
 }
 
 .content {
@@ -64,11 +64,11 @@ main img {
     margin-right: 1rem;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
-    color: #ffa600;
+    color: #544e68;
 }
 
 a {
-    color: #00ffb3;
+    color: #8d697a;
 }
 
 .content h2:first-child {
@@ -77,7 +77,7 @@ a {
 
 header h4 {
     text-align: center;
-    color: #ffa600;
+    color: #8d697a;
 }
 
 @media (max-width: 600px) {
