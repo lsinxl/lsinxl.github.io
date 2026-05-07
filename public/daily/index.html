@@ -6,43 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily | lsinxl</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpeg">
-    <link rel="stylesheet" href="/css/style.css?v=4">
-
+    <link rel="stylesheet" href="/css/style.css?v=5">
 </head>
 
 <body>
-    <main>
-        <header
-            style="margin-bottom: 2em; border-bottom: 1px solid #ffa600; padding-bottom: 1em; align-items: center; justify-content: center; text-align: center;">
-            <h1>lsinxl</h1>
-            <h4 style="text-align: center;">gpg-fingerprint: E6D1203839F963787A5A0DCEA20A2824BBE013AB</h4>
-            <a href="https://github.com/yasansvr" target="_blank">GitHub</a> |
-            <a href="https://www.linkedin.com/in/yasansavari/" target="_blank">LinkedIn</a> |
-            <a href="mailto:yasansvr@outlook.com">Email</a> |
-            <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/E6D1203839F963787A5A0DCEA20A2824BBE013AB">gpg-pb
-                file</a>
-        </header>
+    <div class="app-container">
+        
+        <aside class="sidebar-left">
+            <div class="sidebar-left-inner">
+                <div class="profile-header">
+                    <img src="/favicon.jpeg" alt="lsinxl profile" class="profile-avatar-large">
+                    <h1>lsinxl</h1>
+                    <span class="username">@yasansvr</span>
+                </div>
+                <div class="fingerprint">
+                    <span>gpg-fingerprint:</span><br>
+                    <code>E6D1203839F963787A5A0DCEA20A2824BBE013AB</code>
+                </div>
+                <nav class="nav-links">
+                    <a href="https://github.com/yasansvr" target="_blank" class="nav-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/yasansavari/" target="_blank" class="nav-link">LinkedIn</a>
+                    <a href="mailto:yasansvr@outlook.com" class="nav-link">Email</a>
+                    <a href="https://keys.openpgp.org/vks/v1/by-fingerprint/E6D1203839F963787A5A0DCEA20A2824BBE013AB" class="nav-link">gpg-pb file</a>
+                    <a href="/" class="nav-link">← Back to Home</a>
+                </nav>
+            </div>
+        </aside>
 
-        <section id="content">
-            <aside id="toc">
-                <nav id="TableOfContents">
-  <ul>
-    <li><a href="#1942026---intro">19/4/2026 - intro</a></li>
-    <li><a href="#2042026">20/4/2026</a></li>
-    <li><a href="#2142026">21/4/2026</a></li>
-    <li><a href="#2242026">22/4/2026</a></li>
-    <li><a href="#neomutt-config">neomutt config</a></li>
-    <li><a href="#gpg-key-commands">gpg-key commands</a></li>
-    <li><a href="#2342026">23/4/2026</a></li>
-    <li><a href="#2442026">24/4/2026</a></li>
-    <li><a href="#2642026">26/4/2026</a></li>
-    <li><a href="#2742026">27/4/2026</a></li>
-    <li><a href="#2842026">28/4/2026</a></li>
-  </ul>
-</nav>
-            </aside>
-            <div class="content">
-                <h2 id="1942026---intro">19/4/2026 - intro</h2>
+        
+        <main class="feed">
+            <header class="feed-header">
+                <h2>Daily</h2>
+                <button id="menu-toggle" class="icon-btn" aria-label="Open menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+            </header>
+            
+            <section id="content">
+                <article class="tweet" style="cursor: default;">
+                    <div class="tweet-avatar">
+                        <img src="/favicon.jpeg" alt="avatar">
+                    </div>
+                    <div class="tweet-body">
+                        <div class="tweet-meta">
+                            <span class="tweet-author">lsinxl</span>
+                            <span class="tweet-handle">@yasansvr</span>
+                        </div>
+                        <div class="content">
+                            <h2 id="1942026-intro">19/4/2026 intro</h2>
 <p>سلام. تا جایی که یادمه همیشه دوست داشتم یه مکان برای نوشتن فکرا و دیدگاهام داشته باشم. حقیقتا تلگرام گزینه مناسبی بود ولی خب نوشتن وبلاگ رو یه دامین شخصی یه حس دیگه ای داشت هه هه هه.<br>
 بهرحال اینجا چیزای روزمره رو نمینویسم. بیشتر نظراتم یا شاید حتی اخبار جدید درمورد تکنولوژی و اپن سورس و بیت کوین و این چیزارو بنویسم. و اینکه اگه واستون سواله چرا اینجا انقدر سادست چون دلم میخواست فضای نوستالژی اینترنت حفظ بشه. از جینگولی بازی دیگه خوشم نمیاد.
 و در آخرم اینکه کلی چیز هست باید یاد بگیرم. امیدوارم اونی که اینجارو چک میکنه واسش جالب باشه این چیزا.</p>
@@ -110,15 +121,111 @@ set sort = reverse-threads</p>
 و بنظر من &ldquo;پسر چه حالی داره زندگی سایبرپانکی :)))</p>
 <h2 id="2842026">28/4/2026</h2>
 <p>بنظرم قبل از تبلیغ هرچیز باید در نظر داشت که هرکسی وجودیت خودشو تو یچیزی پیدا میکنه. و شاید منطقی نیست علاقه خودمونو به صورت وریدی تزریق بکنیم به بقیه&hellip;ولی خب اگه نمیشه پس فلسفه بازاریابی چطوری شکل میگیره ؟ منظورم اینه یه نقطه نفوذ باید پیدا کنیم&hellip;حقیقتا یخرده داره سخت میشه باز ارتباطات. هه هه هه</p>
+<h2 id="3042026">30/4/2026</h2>
+<p>امروز ارائه خودم رو در رابطه با بیتکوین و فلسفه ایجادش ارائه دادم. فارغ از کیفیت ارائه ( چون بقیه باید نظر بدن ) نتایج جالبی بدست آوردم که مِن بعد بیشتر تو زندگی شخصیم لحاظش میکنم.
+در کل همچنان بنظرم ترس بهترین نقطه برای شروع یک تغییره. پس آزاد باشید و نترسید. از ترسیدن نترسید :) خودتون میدونید جمله آخر مال کیه&hellip; پرواز کنید و تغییر ایجاد کنید.</p>
+<h2 id="3142026">31/4/2026</h2>
+<p>همیشه استفاده از صرافی های آنلاین ، مخصوصا برای کریپتو کانسپت مضحک و مزخرفی داشته. سیستمای آشغال kyc که کارشون دزدیدن اطلاعاتیه که از اول نباید دستشون میبوده. کدوم ابلهی برای اینکه رو ارزی سرمایه گذاری کنه که ایدئولوژیش حریم خصوصی و امنیته ، حاضره اطلاعات و حریم شخصیشو تو سیستمای دولتی ثبت کنه ؟<br>
+بیتکوین و کریپتوکارنسی نیاز اساسی به آموزش داره.</p>
+<h2 id="252026">2/5/2026</h2>
+<p>دنیای کریپتوگرافی و رمزنگاری بقدری زیباست که واقعا میتونم بگم هیچ چیز بجز کریپتوگرافی نمیتونست ریاضی و کامپیوتر و باهم پیوند بزنه. یطوری در هم تنیده شدن که فقط میگم پشمام :))))</p>
+<h2 id="552026">5/5/2026</h2>
+<p>۹۰ درصد اوقات از عملکردم ناراضیم اون ده درصدم دستم خورده. ولی نه جدی احساس میکنم خیلی عقبم هنوز نسبت به چیزی که انتظار دارم باشم. نه که بگم بی خاصیتم ولی یچیزی کمه. شاید درآمد ؟ هه هه. دارم کم کم به اون نقطه ای میرسم که اگه این نارضایتی ادامه پیدا کنه یه کاری میکنم خدام ازم راضی نباشه. تقریبا ۱ ماه وقت دارم خودمو پیدا کنم. هرچی خیره</p>
+<h2 id="652026">6/5/2026</h2>
+<p>از یجایی به بعد یطوری حالت از دولت ها بهم میخوره که ازون به بعد اینطوریی که یا تو منو یا من تورو آره.
+این بنظرم شروع قابل قبولی بود ولی حالا اومدم دوتا نکته درمورد زندگی خودم بگم.
+اول اینکه هیچوقت ازینکه کلی سوال داشتم نترسیدم ، همیشه اونجایی که هیچ سوالی نداشتم قالب تهی کردم.
+نکته بعدی اینکه برای اینکه عاشق یه کاری بشید فقط یک لحظه و یک نقطه خاص لازمه. و بنظرم قبل ازینکه بخوای بطور جدی چیزیو دنبال کنی ، اول از همه بگرد دنبال اون نقطه خاص. مثلا اگه از انتگرال چیزی نمیفهمی بگرد دنبال اون نقطه ای که که به ساده ترین روش سخت ترین بخش مسئله برات روشن بشه.</p>
+<h2 id="752026">7/5/2026</h2>
+<p>هرچی تو اینترو گفته بودم و زدم زیرش.<br>
+دارم درمورد یه پروژه با nostr فکر میکنم.<br>
+و حدس بزنید چی ؟ دوباره امتحانا تصمیم گرفتن خراب کنن همه چیو&hellip;</p>
 
+                        </div>
+                        
+                        <div class="tweet-actions">
+                            <button class="action-btn copy-btn" title="Copy post text" onclick="copyPostText(this)">
+                                <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <div id="drawer" class="drawer">
+        <div class="drawer-header">
+            <h3>Quick Access</h3>
+            <button id="close-drawer" class="icon-btn" aria-label="Close menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <div class="drawer-content">
+            <div id="toc">
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1942026-intro">19/4/2026 intro</a></li>
+    <li><a href="#2042026">20/4/2026</a></li>
+    <li><a href="#2142026">21/4/2026</a></li>
+    <li><a href="#2242026">22/4/2026</a></li>
+    <li><a href="#neomutt-config">neomutt config</a></li>
+    <li><a href="#gpg-key-commands">gpg-key commands</a></li>
+    <li><a href="#2342026">23/4/2026</a></li>
+    <li><a href="#2442026">24/4/2026</a></li>
+    <li><a href="#2642026">26/4/2026</a></li>
+    <li><a href="#2742026">27/4/2026</a></li>
+    <li><a href="#2842026">28/4/2026</a></li>
+    <li><a href="#3042026">30/4/2026</a></li>
+    <li><a href="#3142026">31/4/2026</a></li>
+    <li><a href="#252026">2/5/2026</a></li>
+    <li><a href="#552026">5/5/2026</a></li>
+    <li><a href="#652026">6/5/2026</a></li>
+    <li><a href="#752026">7/5/2026</a></li>
+  </ul>
+</nav>
             </div>
+        </div>
+    </div>
 
-            <div style="margin-top: 3em; text-align: center;">
-                <a href="/">back to home</a>
-            </div>
-        </section>
+    <script>
+        function copyPostText(btn) {
+            let article = btn.closest('.tweet');
+            let textToCopy = article.querySelector('.content').innerText.trim();
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                let originalHTML = btn.innerHTML;
+                btn.innerHTML = '<svg viewBox="0 0 24 24" width="18" height="18" stroke="#00ba7c" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                setTimeout(() => { btn.innerHTML = originalHTML; }, 2000);
+            });
+        }
 
-    </main>
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            const menuToggle = document.getElementById('menu-toggle');
+            const closeDrawer = document.getElementById('close-drawer');
+            const drawer = document.getElementById('drawer');
+            const drawerOverlay = document.getElementById('drawer-overlay');
+
+            function toggleDrawer() {
+                if(drawer) drawer.classList.toggle('open');
+                if(drawerOverlay) drawerOverlay.classList.toggle('open');
+            }
+
+            if (menuToggle) menuToggle.addEventListener('click', toggleDrawer);
+            if (closeDrawer) closeDrawer.addEventListener('click', toggleDrawer);
+            if (drawerOverlay) drawerOverlay.addEventListener('click', toggleDrawer);
+            
+            const tocLinks = document.querySelectorAll('#toc a');
+            tocLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if(drawer) drawer.classList.remove('open');
+                    if(drawerOverlay) drawerOverlay.classList.remove('open');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

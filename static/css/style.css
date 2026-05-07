@@ -1,94 +1,358 @@
+/* Base Theme */
+:root {
+    --bg-color: #15202b; /* Twitter Dim Background */
+    --border-color: #38444d;
+    --text-primary: #ffffff;
+    --text-secondary: #8899a6;
+    --accent-color: #1da1f2;
+    --hover-bg: rgba(255, 255, 255, 0.03);
+}
+
+* {
+    box-sizing: border-box;
+}
 
 body {
-    background-color: #ffecd6;
-    font-family: Garamond;
-    color: #0d2b45;
+    background-color: var(--bg-color);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-primary);
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Layout */
+.app-container {
+    display: grid;
+    grid-template-columns: 275px minmax(600px, 1fr);
+    max-width: 900px;
     margin: 0 auto;
-    max-width: 80%;
-    padding: 0 1rem;
-    
+    min-height: 100vh;
 }
 
-main img {
-    max-width: 100%;
+/* Left Sidebar */
+.sidebar-left {
+    padding: 1rem 2rem;
 }
-
-#daily {
+.sidebar-left-inner {
+    position: sticky;
+    top: 1rem;
     display: flex;
+    flex-direction: column;
     gap: 2rem;
+}
+.profile-header {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
 }
+.profile-avatar-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--bg-color);
+}
+.profile-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+.profile-header .username {
+    color: var(--text-secondary);
+}
+.fingerprint {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    background: var(--hover-bg);
+    padding: 0.75rem;
+    border-radius: 8px;
+    word-break: break-all;
+    text-align: left;
+    direction: ltr;
+}
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.nav-link {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s;
+    width: fit-content;
+}
+.nav-link:hover {
+    background-color: var(--hover-bg);
+    text-decoration: none;
+}
 
-#toc {
-    width: 150px;
+/* Middle Feed */
+.feed {
+    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    min-height: 100vh;
+}
+.feed-header {
     position: sticky;
-    top: 2rem;
+    top: 0;
+    background-color: rgba(21, 32, 43, 0.85);
+    backdrop-filter: blur(12px);
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.feed-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+.empty-state {
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
 }
 
+/* Common Buttons */
+.icon-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+.icon-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tweets */
+.tweet {
+    display: flex;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+.tweet:hover {
+    background-color: var(--hover-bg);
+}
+.tweet-avatar {
+    margin-left: 1rem; /* Space on left of avatar in RTL */
+    flex-shrink: 0;
+}
+.tweet-avatar img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+.tweet-body {
+    flex: 1;
+    min-width: 0;
+}
+.tweet-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+}
+.tweet-author {
+    font-weight: bold;
+    color: var(--text-primary);
+}
+.tweet-handle, .tweet-dot, .tweet-date {
+    color: var(--text-secondary);
+}
+
+/* Tweet Actions */
+.tweet-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.action-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+.action-btn:hover {
+    color: var(--accent-color);
+    background-color: rgba(29, 161, 242, 0.1);
+}
+
+/* Content Auto Direction inside Tweets */
+.tweet-body p, .tweet-body h1, .tweet-body h2, .tweet-body h3, .tweet-body h4, .tweet-body h5, .tweet-body h6, .tweet-body li, .tweet-body blockquote, .tweet-body div, .tweet-body span {
+    unicode-bidi: plaintext;
+    text-align: start;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+}
+.tweet-body pre, .tweet-body code {
+    direction: ltr;
+    text-align: left;
+    unicode-bidi: plaintext;
+}
+/* Ensure block elements don't collapse */
+.tweet-body pre {
+    background: #192734;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+.tweet-body img {
+    max-width: 100%;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    margin-top: 0.5rem;
+}
+
+/* Drawer Menu overlay */
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+.drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Drawer Content */
+.drawer {
+    position: fixed;
+    top: 0;
+    left: -350px; /* Hidden offscreen (Left side) */
+    width: 300px;
+    height: 100%;
+    background-color: var(--bg-color);
+    border-right: 1px solid var(--border-color);
+    box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+    z-index: 101;
+    transition: left 0.3s ease-in-out;
+    padding: 1rem;
+    overflow-y: auto;
+}
+.drawer.open {
+    left: 0;
+}
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+.drawer-header h3 {
+    margin: 0;
+}
+
+/* TOC Styling inside Drawer */
 #toc nav#TableOfContents {
-    font-size: 1rem;
+    font-size: 0.95rem;
 }
-
 #toc ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
+    gap: 0.5rem;
 }
-
 #toc li {
-    margin-bottom: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
 }
-
+#toc li:last-child {
+    border-bottom: none;
+}
 #toc a {
-    color: #0d2b45;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-
-#toc a:hover {
-    color: #544e68;
-}
-
-.content {
-    flex: 1;
-    min-width: 0;
-}
-
-.content h2 {
-    font-size: 1rem;
+    color: var(--text-primary);
     font-weight: bold;
-    font-style: italic;
-    margin-right: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
-    color: #544e68;
+    display: block;
+}
+#toc a:hover {
+    color: var(--accent-color);
+    text-decoration: none;
 }
 
-a {
-    color: #8d697a;
+/* Responsive */
+@media (max-width: 1024px) {
+    .app-container {
+        grid-template-columns: 275px minmax(auto, 1fr);
+    }
 }
 
-.content h2:first-child {
-    margin-top: 0;
-}
-
-header h4 {
-    text-align: center;
-    color: #8d697a;
-}
-
-@media (max-width: 600px) {
-    #daily {
+@media (max-width: 700px) {
+    .app-container {
+        display: flex;
         flex-direction: column;
     }
-
-    #toc {
-        width: 100%;
+    .sidebar-left {
+        order: -1;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+        border-left: none;
+    }
+    .sidebar-left-inner {
         position: relative;
         top: 0;
-        margin-bottom: 2rem;
+        gap: 1rem;
+    }
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .nav-link {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .profile-header {
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    .profile-avatar-large {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 0;
+    }
+    .feed {
+        border-left: none;
+        border-right: none;
+    }
+    /* Drawer adjusts automatically to mobile */
+    .drawer {
+        width: 80%; /* takes up 80% on mobile */
     }
 }
