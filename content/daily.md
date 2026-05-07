@@ -118,3 +118,9 @@ set sort = reverse-threads
 هرچی تو اینترو گفته بودم و زدم زیرش.  
 دارم درمورد یه پروژه با nostr فکر میکنم.  
 و حدس بزنید چی ؟ دوباره امتحانا تصمیم گرفتن خراب کنن همه چیو...
+
+## 8/5/2026
+
+And just as a seemingly minor invention like barbed wire made possible the fencing-off of vast ranches and farms, thus altering forever the concepts of land and property rights in the frontier West, so too will the seemingly minor discovery out of an arcane branch of mathematics come to be the wire clippers which dismantle the barbed wire around intellectual property.
+
+*Arise, you have nothing to lose but your barbed wire fences!*
