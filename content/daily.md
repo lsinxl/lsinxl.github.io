@@ -11,10 +11,21 @@ And just as a seemingly minor invention like barbed wire made possible the fenci
 ## GPG Terminal Commands  
 [gpg-key commands](/gpg-keys/)
 
-## Who you want to be?  
-Sometimes you feel numb.You complain about everything.Sometimes you just want to pour out all your ideologies without fear of being judged. Or maybe ridiculed...you should find yourself somewhere. Maybe near your friends, maybe near your laptop. I found myself in a symbol. a symbol of freedom. No limitations. Power of speech and developing weapons to defend my privacy. 
-I found myself in bits :)  
-and *It from Bit*(coin)
+## How Miners Work ?
+Imagine 64-digit Hexadecimal number. This is the output of SHA256 hash function!  
+example:  
+`hello world! -> 7509e5bda0c762d2bac7f90d758b5b2263fa01ccbc542ab5e3df163be08e6ca9`  
+so basically SHA256 can create a 64-digit SPECIFIC RANDOM HEXADECIMAL NUMBER from any string.  
+You can change the whole number with small changes in your string:   
+`Hello world! -> c0535e4be2b79ffd93291305436bf889314e4a3faec05ecffcbb7df31ad9e51a`  
+ now imagine there is a game and the rule is that to find a number which is smaller or equal to:  
+`00000000000000000f9924b017a48ef8b16311e0a2e6fa9f3f1822bc05cc197` (look at it like `0034` in decimal)    
+This is **Target**.   
+All of the transactions updated in MEMPOOL. (https://mempool.space) Miners select transactions from mempool based on the higher fees.  
+after this , Miner try to hash all the transactions information (sender address , receiver address , amount , date and etc. ) with a decimal number (starts from 0 , we call it NONCE )
+to find a hex value, equal or smaller than TARGET value.  
+The zeros of the Target value called **difficulty**. Bitcoin Protocol can update it by current miners activity and hash rate. 
+
 
 
 
