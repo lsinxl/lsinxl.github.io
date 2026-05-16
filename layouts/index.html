@@ -17,7 +17,6 @@
                 <div class="profile-header">
                     <img src="/favicon.jpeg" alt="lsinxl profile" class="profile-avatar-large">
                     <h1>lsinxl</h1>
-                    <span class="username">@yasansvr</span>
                 </div>
                 <div class="fingerprint">
                     <span>GPG FINGERPRINT</span><br>
@@ -113,22 +112,16 @@
                     authorName.className = 'tweet-author';
                     authorName.innerText = 'lsinxl';
 
-                    let authorHandle = document.createElement('span');
-                    authorHandle.className = 'tweet-handle';
-                    authorHandle.innerText = '@yasansvr';
-                    
                     let dot = document.createElement('span');
                     dot.className = 'tweet-dot';
                     dot.innerText = '·';
 
                     let tweetDate = document.createElement('span');
                     tweetDate.className = 'tweet-date';
-                    // We modify the H2 to be an inline span or keep it but strip margin
                     let dateText = el.innerText;
                     tweetDate.innerText = dateText;
 
                     tweetMeta.appendChild(authorName);
-                    tweetMeta.appendChild(authorHandle);
                     tweetMeta.appendChild(dot);
                     tweetMeta.appendChild(tweetDate);
 

@@ -54,7 +54,7 @@ a:hover {
 .profile-header {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 .profile-avatar-large {
     width: 120px;
@@ -160,12 +160,13 @@ a:hover {
     padding: 1rem;
     border-bottom: 1px solid var(--border-color);
     transition: background-color 0.2s;
+    flex-direction: row-reverse;
 }
 .tweet:hover {
     background-color: var(--hover-bg);
 }
 .tweet-avatar {
-    margin-left: 1rem; /* Space on left of avatar in RTL */
+    margin-right: 1rem; /* Space on right of avatar in RTL when on left */
     flex-shrink: 0;
 }
 .tweet-avatar img {
@@ -370,7 +371,7 @@ a:hover {
         padding: 0.5rem 1rem;
     }
     .profile-header {
-        flex-direction: row;
+        flex-direction: row-reverse;
         gap: 1rem;
         align-items: center;
     }
