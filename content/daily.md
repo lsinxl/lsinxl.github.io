@@ -26,6 +26,8 @@ after this , Miner try to hash all the transactions information (sender address 
 to find a hex value, equal or smaller than TARGET value.  
 The zeros of the Target value called **difficulty**. Bitcoin Protocol can update it by current miners activity and hash rate. 
 
-
-
+## How Miners Work? 2
+You can simulate how real miners work in Hard-Mode: https://bitpolito-mining-game.vercel.app  
+I made it btw... hahaha
+Created with Love by BitPolito
 
