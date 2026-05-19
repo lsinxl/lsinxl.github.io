@@ -180,6 +180,7 @@ a:hover {
 }
 .tweet-meta {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.25rem;
@@ -187,6 +188,7 @@ a:hover {
 }
 .tweet-author {
     font-weight: bold;
+    
     color: var(--text-primary);
 }
 .tweet-handle, .tweet-dot, .tweet-date {
