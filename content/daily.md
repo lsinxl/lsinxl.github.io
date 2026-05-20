@@ -31,3 +31,10 @@ You can simulate how real miners work in Hard-Mode: https://bitpolito-mining-gam
 I made it btw... hahaha
 Created with Love by BitPolito
 
+## Fun fact #1  
+if you don't know a single shit about how to program, It doesn't matter.  
+but if you don't know how a program should work , kill yourself. 
+coding does NOT matter anymore.  
+BASIC KNOWLEDGES STILL ON TOP...
+
+
