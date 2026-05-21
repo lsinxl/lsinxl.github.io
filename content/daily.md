@@ -37,4 +37,6 @@ but if you don't know how a program should work , kill yourself.
 coding does NOT matter anymore.  
 BASIC KNOWLEDGES STILL ON TOP...
 
+## Am I wrong?  
+Tonight, after a long time, maybe I've reached the point where I can admit that I made a mistake for 4 years. 
 
