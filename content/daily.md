@@ -40,3 +40,9 @@ BASIC KNOWLEDGES STILL ON TOP...
 ## Am I wrong?  
 Tonight, after a long time, maybe I've reached the point where I can admit that I made a mistake for 4 years. 
 
+## 23May2026  
+I spent 20 days for developing a web app. 
+trying different algorithms and solutions to find the best way to simulate BTC miners.(and research to see how it really works and how can I similate it in the simplest way.) tomorrow morning it will be presented...  
+I'm not there. I hope it works :)💙
+I won't be there. But I hope the presentation 
+
