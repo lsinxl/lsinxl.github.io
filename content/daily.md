@@ -45,3 +45,5 @@ I spent 20 days for developing a web app.
 trying different algorithms and solutions to find the best way to simulate BTC miners.(and research to see how it really works and how can I similate it in the simplest way.) tomorrow morning it will be presented...  
 I'm not there. I hope it works :)💙
 
+## Richard Feynman's Quote 
+"Nature permits us to calculate only probabilities. Yet science has not collapsed."
