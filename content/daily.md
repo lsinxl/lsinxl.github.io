@@ -47,3 +47,6 @@ I'm not there. I hope it works :)💙
 
 ## Richard Feynman's Quote 
 "Nature permits us to calculate only probabilities. Yet science has not collapsed."
+
+## Fun fact #2  
+Every passing day, I realize more and more that the majority make up for their lack of attention with their stupidity. Around here, the stupider you are, the more people love you—from internet models to religious extremists. They feed on other people's misery. They don't care how dire the situation is. Their rule is simple: as long as you love me, I'll keep playing the fool...
